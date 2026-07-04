@@ -2,6 +2,9 @@ import {
   getBaseCE,
   getBaseEmom,
   getSitups,
+  getTempoPompes,
+  getVariantPompes,
+  getVups,
   getWod1Pompes,
   type Maxes,
 } from '../lib/program'
@@ -79,9 +82,26 @@ export default function SettingsView({ maxes, onChange, onReset }: Props) {
             <strong>{getWod1Pompes(maxes)}</strong> reps par minute.
           </li>
           <li>
+            <strong className="text-ink">Pompes tempo</strong> = 15 % du max →{' '}
+            <strong>{getTempoPompes(maxes)}</strong> reps par série · <strong className="text-ink">variantes</strong>{' '}
+            (diamant/archer) = 20 % → <strong>{getVariantPompes(maxes)}</strong> reps ·{' '}
+            <strong className="text-ink">V-ups</strong> = 20 % du max abdos →{' '}
+            <strong>{getVups(maxes)}</strong> reps.
+          </li>
+          <li>
             <strong className="text-ink">Modulation hebdo</strong> : S1-S2 base (« Installation ») ·
             S3-S4 CE +1 et EMOM +1 (« Montée en charge ») · S5 CE +2, EMOM +2, planche 60 s (« Pic ») ·
-            S6 CE +1, EMOM −1 (« Affûtage »).
+            S6 CE +1, EMOM −1 (« Affûtage »). Les WOD s’allongent aussi avec les phases (AMRAP 12'
+            → 20', EMOM 12' → 18') puis raccourcissent en affûtage.
+          </li>
+          <li>
+            <strong className="text-ink">Autorégulation J4</strong> : chaque J4 validé à 9 séries ou
+            plus débloque +1 au CE pour les semaines suivantes (cumulable, plafonné à +3). Log
+            directement sur la carte du jeudi.
+          </li>
+          <li>
+            <strong className="text-ink">Grip</strong> : suspension 30 s (S1) → 50 s (S5), 40 s en
+            affûtage — travaillé lundi et vendredi, plus les leg raises suspendus du mercredi.
           </li>
           <li>
             <strong className="text-ink">Simulations S4-S6</strong> : objectif tractions = max + (semaine

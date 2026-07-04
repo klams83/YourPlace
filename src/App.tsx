@@ -23,6 +23,8 @@ export default function App() {
   const setWeek = (currentWeek: number) => setState((s) => ({ ...s, currentWeek }))
   const toggleDay = (key: string) =>
     setState((s) => ({ ...s, validated: { ...s.validated, [key]: !s.validated[key] } }))
+  const setJ4Series = (week: number, n: number) =>
+    setState((s) => ({ ...s, j4Series: { ...s.j4Series, [week]: n } }))
   const addResult = (result: Omit<SimResult, 'id'>) =>
     setState((s) => ({
       ...s,
@@ -31,7 +33,7 @@ export default function App() {
   const deleteResult = (id: string) =>
     setState((s) => ({ ...s, history: s.history.filter((r) => r.id !== id) }))
   const reset = () =>
-    setState({ maxes: DEFAULT_MAXES, currentWeek: 1, validated: {}, history: [] })
+    setState({ maxes: DEFAULT_MAXES, currentWeek: 1, validated: {}, j4Series: {}, history: [] })
 
   return (
     <div className="mx-auto flex min-h-dvh max-w-lg flex-col">
@@ -53,8 +55,10 @@ export default function App() {
             maxes={state.maxes}
             week={state.currentWeek}
             validated={state.validated}
+            j4Series={state.j4Series}
             onWeekChange={setWeek}
             onToggleDay={toggleDay}
+            onJ4SeriesChange={setJ4Series}
           />
         )}
         {tab === 'tests' && <TestsView maxes={state.maxes} onGoToSettings={() => setTab('reglages')} />}

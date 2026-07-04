@@ -1,4 +1,12 @@
-import { GUARD_RAILS, WEEKS, getPhase, getWeekDays, type Maxes } from '../lib/program'
+import {
+  GUARD_RAILS,
+  WEEKS,
+  getCarryBonus,
+  getGtgTip,
+  getPhase,
+  getWeekDays,
+  type Maxes,
+} from '../lib/program'
 import { dayKey } from '../lib/store'
 import DayCard from './DayCard'
 
@@ -6,13 +14,24 @@ interface Props {
   maxes: Maxes
   week: number
   validated: Record<string, boolean>
+  j4Series: Record<number, number>
   onWeekChange: (week: number) => void
   onToggleDay: (key: string) => void
+  onJ4SeriesChange: (week: number, n: number) => void
 }
 
-export default function ProgramView({ maxes, week, validated, onWeekChange, onToggleDay }: Props) {
+export default function ProgramView({
+  maxes,
+  week,
+  validated,
+  j4Series,
+  onWeekChange,
+  onToggleDay,
+  onJ4SeriesChange,
+}: Props) {
   const phase = getPhase(week)
-  const days = getWeekDays(week, maxes)
+  const carry = getCarryBonus(j4Series, week)
+  const days = getWeekDays(week, maxes, j4Series)
   const doneCount = days.filter((d) => !d.rest && validated[dayKey(week, d.index)]).length
   const totalCount = days.filter((d) => !d.rest).length
 
@@ -36,23 +55,30 @@ export default function ProgramView({ maxes, week, validated, onWeekChange, onTo
         ))}
       </nav>
 
-      <div className="flex items-center justify-between border border-line bg-white/60 px-3 py-2">
-        <div>
+      <div className="border border-line bg-white/60 px-3 py-2">
+        <div className="flex items-center justify-between">
           <p className="font-display text-lg font-semibold uppercase tracking-wide text-navy">
             Semaine {week} — {phase.name}
           </p>
-          <p className="text-xs text-ink-soft">
-            {phase.ceBonus > 0 ? `CE +${phase.ceBonus} · ` : ''}
-            {phase.emomBonus !== 0
-              ? `EMOM ${phase.emomBonus > 0 ? '+' : ''}${phase.emomBonus} · `
-              : ''}
-            {week >= 4 ? 'Simulation test samedi' : 'WOD mixte samedi'}
-          </p>
+          <span className="font-display text-sm font-semibold text-ink-soft">
+            {doneCount}/{totalCount} séances
+          </span>
         </div>
-        <span className="font-display text-sm font-semibold text-ink-soft">
-          {doneCount}/{totalCount} séances
-        </span>
+        <p className="mt-0.5 text-xs leading-snug text-ink-soft">{phase.theme}</p>
+        <p className="mt-1 text-xs text-ink-muted">
+          {phase.ceBonus > 0 ? `CE +${phase.ceBonus} (phase)` : 'CE base'}
+          {carry > 0 ? ` +${carry} (J4 validés)` : ''}
+          {phase.emomBonus !== 0
+            ? ` · EMOM ${phase.emomBonus > 0 ? '+' : ''}${phase.emomBonus}`
+            : ''}
+          {' · '}
+          {week >= 4 ? 'Simulation test samedi' : 'WOD mixte + épreuve samedi'}
+        </p>
       </div>
+
+      <p className="border border-dashed border-line bg-white/40 px-3 py-2 text-xs leading-snug text-ink-soft">
+        {getGtgTip(maxes, week, j4Series)}
+      </p>
 
       <div className="space-y-3">
         {days.map((day) => (
@@ -61,6 +87,8 @@ export default function ProgramView({ maxes, week, validated, onWeekChange, onTo
             day={day}
             validated={!!validated[dayKey(week, day.index)]}
             onToggle={() => onToggleDay(dayKey(week, day.index))}
+            j4Done={day.isJ4 ? j4Series[week] : undefined}
+            onJ4SeriesChange={day.isJ4 ? (n) => onJ4SeriesChange(week, n) : undefined}
           />
         ))}
       </div>

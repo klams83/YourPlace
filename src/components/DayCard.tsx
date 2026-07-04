@@ -4,9 +4,11 @@ interface Props {
   day: Day
   validated: boolean
   onToggle: () => void
+  j4Done?: number
+  onJ4SeriesChange?: (n: number) => void
 }
 
-export default function DayCard({ day, validated, onToggle }: Props) {
+export default function DayCard({ day, validated, onToggle, j4Done, onJ4SeriesChange }: Props) {
   return (
     <article
       className={`border bg-white/70 shadow-sm ${
@@ -24,6 +26,7 @@ export default function DayCard({ day, validated, onToggle }: Props) {
           </h3>
           <p className={`text-xs ${day.isJ4 ? 'text-white/90' : day.rest ? 'text-ink-muted' : 'text-white/80'}`}>
             {day.focus}
+            {day.duration && <span className="opacity-75"> · {day.duration}</span>}
           </p>
         </div>
         {!day.rest && (
@@ -50,6 +53,32 @@ export default function DayCard({ day, validated, onToggle }: Props) {
           <p className="text-xs font-semibold uppercase tracking-wider text-stamp">
             Chiffre d’entraînement (CE)
           </p>
+          {onJ4SeriesChange && (
+            <div className="mt-2 flex flex-col items-center gap-1">
+              <label className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-ink-soft">
+                Séries au CE réussies
+                <input
+                  type="number"
+                  inputMode="numeric"
+                  min={0}
+                  max={15}
+                  value={j4Done || ''}
+                  placeholder="0"
+                  onChange={(e) =>
+                    onJ4SeriesChange(Math.max(0, Math.min(15, Number(e.target.value) || 0)))
+                  }
+                  className="w-16 border border-line bg-paper px-1 py-1 text-center font-display text-lg font-bold text-navy focus:border-navy focus:outline-none"
+                />
+              </label>
+              {(j4Done ?? 0) >= 9 ? (
+                <p className="text-xs font-semibold text-chart-abdos">
+                  ✓ Objectif 9 séries atteint → +1 au CE la semaine prochaine
+                </p>
+              ) : (
+                <p className="text-xs text-ink-muted">9 séries = +1 au CE la semaine suivante</p>
+              )}
+            </div>
+          )}
         </div>
       )}
 

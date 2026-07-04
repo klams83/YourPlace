@@ -30,6 +30,14 @@ dans l'onglet **Réglages** (défaut : 12 tractions / 45 pompes / 50 abdos) :
 - **Simulations S4-S6** : tractions = max + (semaine − 3) ;
   pompes/abdos = max × (1 + 0,03 × (semaine − 3))
 
+La programmation v2 « prépa élite » s'inspire des références du marché
+(Frankton Tactical, prépas type Invictus / Forces Spéciales Coaching,
+méthodes calisthénics, hybride Hyrox) : échauffements structurés, pompes
+tempo et variantes, grip hebdomadaire (suspensions progressives 30 → 50 s),
+prehab coudes/épaules, WOD dont la durée suit les phases, épreuve chiffrée
+à valider chaque samedi (S1-S3), autorégulation du J4 (9 séries validées =
++1 au CE, cumulable jusqu'à +3), et récupération active guidée le dimanche.
+
 Onglets : **Programme** (semaine par semaine, jour par jour, séances validables),
 **Tests réf.** (protocole des tests de référence), **Historique** (log des
 simulations + graphe de progression vers l'objectif du test), **Réglages**.

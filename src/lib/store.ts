@@ -14,6 +14,7 @@ export interface AppState {
   maxes: Maxes
   currentWeek: number
   validated: Record<string, boolean> // clé "S1-0" = semaine 1, lundi
+  j4Series: Record<number, number> // séries au CE réussies au J4, par semaine
   history: SimResult[]
 }
 
@@ -23,6 +24,7 @@ const DEFAULT_STATE: AppState = {
   maxes: DEFAULT_MAXES,
   currentWeek: 1,
   validated: {},
+  j4Series: {},
   history: [],
 }
 

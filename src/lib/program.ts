@@ -13,7 +13,13 @@
 // course) viennent de la bibliothèque wods.ts et s'ajoutent au mardi /
 // remplacent le WOD générique du samedi (S1-S3).
 
-import { getSaturdayBenchmarkWod, getTuesdayBonusWod } from './wods'
+import {
+  getFridayBonusWod,
+  getMondayBonusWod,
+  getSaturdayBenchmarkWod,
+  getTuesdayBonusWod,
+  getWednesdayBonusWod,
+} from './wods'
 
 export interface Maxes {
   tractions: number
@@ -269,15 +275,20 @@ export function getWeekDays(
   const sim = isSimWeek ? getSimTargets(maxes, week) : undefined
   const challenge = !isSimWeek ? getChallenge(maxes, week) : undefined
   const taper = week === 6
+  const mondayBonus = getMondayBonusWod(week, maxes)
   const tuesdayBonus = getTuesdayBonusWod(week, maxes)
+  const wednesdayBonus = getWednesdayBonusWod(week, maxes)
+  const fridayBonus = getFridayBonusWod(week, maxes)
   const saturdayBenchmark = !isSimWeek ? getSaturdayBenchmarkWod(week, maxes) : undefined
+  const OPTIONAL_NOTE =
+    'Optionnel : à faire seulement si l’envie et le temps le permettent — n’entame jamais la fraîcheur de la colonne Armstrong.'
 
   const days: Day[] = [
     {
       index: 0,
       name: DAY_NAMES[0],
       focus: 'Moteur pompes + Armstrong J1',
-      duration: 'AM ~25 min · PM ~35 min',
+      duration: 'AM ~25 min · PM ~35 min (+ bonus optionnel ~10 min)',
       blocks: [
         { ...WARMUP_PUSH, title: 'ACTIVATION AM (5-8 min)' },
         {
@@ -314,6 +325,12 @@ export function getWeekDays(
             'Repos 60 s entre les tenues',
           ],
           note: 'Le grip est le premier facteur d’échec aux agrès/corde : on le travaille chaque semaine.',
+        },
+        {
+          tag: `BONUS — ${mondayBonus.name}`,
+          title: mondayBonus.format,
+          lines: mondayBonus.lines,
+          note: `${mondayBonus.origin} ${mondayBonus.scoring} ${OPTIONAL_NOTE}`,
         },
       ],
       warnings: ['WOD avec tirage (sled, rowing) interdit aujourd’hui : J1 le soir, J4 jeudi.'],
@@ -357,7 +374,7 @@ export function getWeekDays(
           tag: `WOD — ${tuesdayBonus.name}`,
           title: tuesdayBonus.format,
           lines: tuesdayBonus.lines,
-          note: `${tuesdayBonus.origin} ${tuesdayBonus.scoring}`,
+          note: `${tuesdayBonus.origin} ${tuesdayBonus.scoring} ${OPTIONAL_NOTE}`,
         },
       ],
       warnings: ['Pas de VMA / course intense demain soir : le J4 arrive jeudi.'],
@@ -366,7 +383,7 @@ export function getWeekDays(
       index: 2,
       name: DAY_NAMES[2],
       focus: 'Armstrong J3 prises + tronc complet + prehab',
-      duration: '~45 min',
+      duration: '~45 min (+ bonus optionnel ~10 min)',
       blocks: [
         WARMUP_PULL,
         {
@@ -401,6 +418,12 @@ export function getWeekDays(
             '10 relevés en Y-T-W au sol, lents',
           ],
           note: 'Protection de la face interne du coude — le point faible n°1 sur Armstrong.',
+        },
+        {
+          tag: `BONUS — ${wednesdayBonus.name}`,
+          title: wednesdayBonus.format,
+          lines: wednesdayBonus.lines,
+          note: `${wednesdayBonus.origin} ${wednesdayBonus.scoring} ${OPTIONAL_NOTE}`,
         },
       ],
       warnings: [
@@ -439,7 +462,7 @@ export function getWeekDays(
       index: 4,
       name: DAY_NAMES[4],
       focus: 'Armstrong J5 + cap mentale',
-      duration: '~55 min',
+      duration: '~55 min (+ bonus optionnel ~10 min)',
       blocks: [
         WARMUP_PULL,
         {
@@ -468,6 +491,12 @@ export function getWeekDays(
             '1 × max de flexed-arm hang (menton au-dessus de la barre, tenir)',
             'Option si accès corde : 2-3 montées de corde AVEC les jambes (legless interdit cette semaine si douleur coude)',
           ],
+        },
+        {
+          tag: `BONUS — ${fridayBonus.name}`,
+          title: fridayBonus.format,
+          lines: fridayBonus.lines,
+          note: `${fridayBonus.origin} ${fridayBonus.scoring} ${OPTIONAL_NOTE}`,
         },
       ],
       warnings: isSimWeek ? ['Simulation demain : garder de la réserve, RPE ≤ 8 sur le WOD.'] : [],

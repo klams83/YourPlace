@@ -105,9 +105,17 @@ export default function SettingsView({ maxes, onChange, onReset }: Props) {
           </li>
           <li>
             <strong className="text-ink">Benchmarks CrossFit</strong> : Cindy, Chief, Barbara, Angie,
-            Annie et une version « Murph sans course » s’ajoutent au mardi et remplacent le WOD du
-            samedi (S1-S3) — les mêmes formats utilisés dans les prépas gendarmerie/pompiers/forces
-            spéciales, avec des reps calculées sur tes maxes.
+            Annie, Tabata Something Else, Death By Burpees et une version « Murph sans course » —
+            les mêmes formats utilisés dans les prépas gendarmerie/pompiers/forces spéciales, avec des
+            reps calculées sur tes maxes quand c’est pertinent.
+          </li>
+          <li>
+            <strong className="text-ink">Un bonus par séance</strong> : lundi, mardi, mercredi et
+            vendredi ont chacun un WOD bonus <em>optionnel</em> — à faire seulement si l’envie et le
+            temps le permettent, ça n’entame jamais l’Armstrong. Le samedi (S1-S3), le benchmark
+            remplace le WOD générique et fait partie de la séance normale. Le jeudi (J4) et le
+            dimanche restent volontairement sans bonus : ce sont les deux jours protégés du
+            programme.
           </li>
           <li>
             <strong className="text-ink">Simulations S4-S6</strong> : objectif tractions = max + (semaine

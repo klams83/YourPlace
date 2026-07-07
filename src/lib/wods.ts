@@ -112,9 +112,52 @@ export function getMurphNoRun(maxes: Maxes): Wod {
   }
 }
 
-// Rotation hebdomadaire : un bonus après le WOD 1 du mardi (comparable d'une
-// semaine à l'autre pour mesurer la progression), un benchmark le samedi les
-// semaines sans simulation (S1-S3).
+export function getTabataSomethingElse(): Wod {
+  return {
+    id: 'tabata-something-else',
+    name: 'TABATA SOMETHING ELSE',
+    origin:
+      'Format Tabata (20 s effort / 10 s repos) enchaîné sur 4 mouvements — un classique des préparations tactiques pour la puissance sous fatigue express.',
+    format: "4 × 8 rounds de 20''/10'' (tractions puis pompes puis abdos puis squats)",
+    lines: [
+      '8 rounds de tractions (20\'\'/10\'\')',
+      '8 rounds de pompes (20\'\'/10\'\')',
+      '8 rounds d’abdos (20\'\'/10\'\')',
+      '8 rounds de squats (20\'\'/10\'\')',
+    ],
+    scoring: 'Score = le round le plus faible de chaque mouvement, additionné (le « score Tabata »).',
+  }
+}
+
+export function getDeathByBurpees(): Wod {
+  return {
+    id: 'death-by-burpees',
+    name: 'DEATH BY BURPEES',
+    origin: 'Format EMOM progressif jusqu’à l’échec — très utilisé en conditioning tactique pour tester le seuil.',
+    format: 'EMOM progressif jusqu’à l’échec',
+    lines: [
+      'Minute 1 : 1 burpee',
+      'Minute 2 : 2 burpees',
+      'Minute 3 : 3 burpees',
+      '… +1 burpee chaque minute, jusqu’à ne plus tenir le temps imparti',
+    ],
+    scoring: 'Score = dernière minute complétée dans le temps imparti.',
+  }
+}
+
+// Rotation hebdomadaire — un WOD bonus par séance (optionnel : à faire si le
+// temps/l'envie le permet, ça n'entame jamais la fraîcheur de la colonne
+// Armstrong). Jamais sur le J4 (jeudi, « rien d'autre ») ni le dimanche
+// (repos complet) : ces deux garde-fous restent non négociables.
+export function getMondayBonusWod(week: number, maxes: Maxes): Wod {
+  if (week === 1) return getTabataSomethingElse()
+  if (week === 2) return getDeathByBurpees()
+  if (week === 3) return getChief()
+  if (week === 4) return getBarbara(maxes)
+  if (week === 5) return getChief()
+  return getCindy(10) // S6 affûtage
+}
+
 export function getTuesdayBonusWod(week: number, maxes: Maxes): Wod {
   if (week === 1) return getCindy(12)
   if (week === 2) return getCindy(15)
@@ -122,6 +165,24 @@ export function getTuesdayBonusWod(week: number, maxes: Maxes): Wod {
   if (week === 4) return getChief()
   if (week === 5) return getMurphNoRun(maxes)
   return getCindy(10) // S6 affûtage : retest court, à comparer à S1-S2
+}
+
+export function getWednesdayBonusWod(week: number, maxes: Maxes): Wod {
+  if (week === 1) return getDeathByBurpees()
+  if (week === 2) return getTabataSomethingElse()
+  if (week === 3) return getCindy(15)
+  if (week === 4) return getDeathByBurpees()
+  if (week === 5) return getAngie(maxes)
+  return getTabataSomethingElse() // S6 affûtage
+}
+
+export function getFridayBonusWod(week: number, maxes: Maxes): Wod {
+  if (week === 1) return getCindy(10)
+  if (week === 2) return getChief()
+  if (week === 3) return getAngie(maxes)
+  if (week === 4) return getCindy(12)
+  if (week === 5) return getDeathByBurpees()
+  return getCindy(8) // S6 affûtage : retest court
 }
 
 export function getSaturdayBenchmarkWod(week: number, maxes: Maxes): Wod | undefined {

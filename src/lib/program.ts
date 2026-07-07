@@ -9,6 +9,11 @@
 // - Calisthénics (Flo Marrec) : tempo, excentriques, isométrie, densité, grip
 // - Hybride Hyrox / La Forge : moteur sous fatigue, travail « compromis »
 // La colonne vertébrale reste le programme Armstrong tractions, 5 j/semaine.
+// Les benchmarks CrossFit (Cindy, Chief, Barbara, Angie, Annie, Murph sans
+// course) viennent de la bibliothèque wods.ts et s'ajoutent au mardi /
+// remplacent le WOD générique du samedi (S1-S3).
+
+import { getSaturdayBenchmarkWod, getTuesdayBonusWod } from './wods'
 
 export interface Maxes {
   tractions: number
@@ -264,6 +269,8 @@ export function getWeekDays(
   const sim = isSimWeek ? getSimTargets(maxes, week) : undefined
   const challenge = !isSimWeek ? getChallenge(maxes, week) : undefined
   const taper = week === 6
+  const tuesdayBonus = getTuesdayBonusWod(week, maxes)
+  const saturdayBenchmark = !isSimWeek ? getSaturdayBenchmarkWod(week, maxes) : undefined
 
   const days: Day[] = [
     {
@@ -314,8 +321,8 @@ export function getWeekDays(
     {
       index: 1,
       name: DAY_NAMES[1],
-      focus: 'Armstrong J2 pyramide + endurance de force',
-      duration: '~50 min',
+      focus: `Armstrong J2 pyramide + endurance de force + ${tuesdayBonus.name}`,
+      duration: '~65 min',
       blocks: [
         WARMUP_PULL,
         {
@@ -345,6 +352,12 @@ export function getWeekDays(
             `3 × ${variantPompes} pompes diamant (S1-S2) / archer (S3+)`,
             '2 × 30 s de planche latérale par côté',
           ],
+        },
+        {
+          tag: `WOD — ${tuesdayBonus.name}`,
+          title: tuesdayBonus.format,
+          lines: tuesdayBonus.lines,
+          note: `${tuesdayBonus.origin} ${tuesdayBonus.scoring}`,
         },
       ],
       warnings: ['Pas de VMA / course intense demain soir : le J4 arrive jeudi.'],
@@ -462,8 +475,10 @@ export function getWeekDays(
     {
       index: 5,
       name: DAY_NAMES[5],
-      focus: isSimWeek ? 'SIMULATION TEST' : `WOD mixte + épreuve « ${challenge!.name} »`,
-      duration: isSimWeek ? '~40 min' : '~45 min',
+      focus: isSimWeek
+        ? 'SIMULATION TEST'
+        : `${saturdayBenchmark!.name} + épreuve « ${challenge!.name} »`,
+      duration: isSimWeek ? '~40 min' : '~55 min',
       simulation: sim,
       blocks: isSimWeek
         ? [
@@ -497,10 +512,10 @@ export function getWeekDays(
         : [
             WARMUP_PUSH,
             {
-              tag: 'WOD 2',
-              title: 'MIXTE — 4 ROUNDS',
-              lines: ['15 pompes', '20 abdos', '15 squats', '10 burpees', 'Repos 60 s entre les rounds'],
-              note: 'Sous fatigue, garder des standards parfaits : c’est du travail « compromis » type Hyrox.',
+              tag: `WOD — ${saturdayBenchmark!.name}`,
+              title: saturdayBenchmark!.format,
+              lines: saturdayBenchmark!.lines,
+              note: `${saturdayBenchmark!.origin} ${saturdayBenchmark!.scoring}`,
             },
             {
               tag: 'ÉPREUVE',

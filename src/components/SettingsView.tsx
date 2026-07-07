@@ -104,6 +104,12 @@ export default function SettingsView({ maxes, onChange, onReset }: Props) {
             affûtage — travaillé lundi et vendredi, plus les leg raises suspendus du mercredi.
           </li>
           <li>
+            <strong className="text-ink">Benchmarks CrossFit</strong> : Cindy, Chief, Barbara, Angie,
+            Annie et une version « Murph sans course » s’ajoutent au mardi et remplacent le WOD du
+            samedi (S1-S3) — les mêmes formats utilisés dans les prépas gendarmerie/pompiers/forces
+            spéciales, avec des reps calculées sur tes maxes.
+          </li>
+          <li>
             <strong className="text-ink">Simulations S4-S6</strong> : objectif tractions = max + (semaine
             − 3) ; pompes et abdos = max × (1 + 3 % × (semaine − 3)).
           </li>

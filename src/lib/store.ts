@@ -4,7 +4,7 @@ const STORAGE_KEY = 'tractions0max:v1'
 
 export function niveauDepuisMax(max: number): Niveau {
   if (max <= 3) return 1
-  if (max <= 8) return 2
+  if (max <= 10) return 2
   return 3
 }
 

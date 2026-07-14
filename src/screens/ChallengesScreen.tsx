@@ -48,7 +48,11 @@ export function ChallengesScreen() {
     const def = CHALLENGES_DEFS[ouvert]
     return (
       <div className="p-4 max-w-md mx-auto">
-        <PageTitle sub={def.unite === 'secondes' ? 'Résultat en secondes' : 'Résultat en répétitions'}>{def.nom}</PageTitle>
+        <PageTitle sub={def.unite === 'secondes' ? 'Résultat en secondes' : 'Résultat : dernier palier réussi'}>{def.nom}</PageTitle>
+
+        <Card className="mb-4">
+          <p className="text-ink-soft text-sm leading-relaxed">{def.description}</p>
+        </Card>
 
         <Card className="mb-4 text-center">
           <p className="font-mono text-5xl text-amber tabular-nums mb-4">{formatChrono(chrono.elapsedMs)}</p>
@@ -75,7 +79,7 @@ export function ChallengesScreen() {
         </Card>
 
         <label className="block text-ink-muted text-sm mb-2">
-          Résultat ({def.unite === 'secondes' ? 'secondes' : 'répétitions'})
+          Résultat ({def.unite === 'secondes' ? 'secondes' : 'dernier palier réussi'})
         </label>
         <input
           inputMode="numeric"
@@ -103,16 +107,17 @@ export function ChallengesScreen() {
       <div className="space-y-3">
         {CHALLENGES_DEFS.map((def, i) => (
           <Card key={def.nom}>
-            <div className="flex items-center justify-between mb-3">
+            <div className="flex items-center justify-between mb-2">
               <h2 className="font-display text-xl text-ink">{def.nom}</h2>
               {meilleurs.has(def.nom) ? (
                 <Badge tone="amber">
-                  Best {meilleurs.get(def.nom)} {def.unite === 'secondes' ? 's' : 'reps'}
+                  Best {meilleurs.get(def.nom)} {def.unite === 'secondes' ? 's' : ''}
                 </Badge>
               ) : (
                 <Badge tone="olive">Pas encore fait</Badge>
               )}
             </div>
+            <p className="text-ink-muted text-xs mb-3">{def.description}</p>
             <Button variant="secondary" onClick={() => ouvrirChallenge(i)}>
               Lancer
             </Button>

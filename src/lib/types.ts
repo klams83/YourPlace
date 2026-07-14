@@ -72,10 +72,31 @@ export interface AppState {
   challenges: ChallengeEntry[]
 }
 
-export const CHALLENGES_DEFS: { nom: string; unite: ChallengeUnite }[] = [
-  { nom: 'Max one shot', unite: 'reps' },
-  { nom: '50 tractions chrono', unite: 'secondes' },
-  { nom: 'Échelle 1→10', unite: 'reps' },
-  { nom: 'Hold menton — temps max', unite: 'secondes' },
-  { nom: 'Dead hang — temps max', unite: 'secondes' },
+export const CHALLENGES_DEFS: { nom: string; unite: ChallengeUnite; description: string }[] = [
+  {
+    nom: 'Demi-BBR',
+    unite: 'secondes',
+    description: '3 muscle-up, 25 dips, 15 tractions, 30 pompes, 3 muscle-up — le plus vite possible.',
+  },
+  {
+    nom: 'On the bar',
+    unite: 'reps',
+    description: "1 traction, 10' iso bras tendus, 1 traction, 10' iso bras tendus... jusqu'à l'échec. Score = dernier palier réussi.",
+  },
+  {
+    nom: 'The 100',
+    unite: 'secondes',
+    description: '100 dips, 100 tractions, 100 pompes — le plus vite possible.',
+  },
+  {
+    nom: 'Pharaon',
+    unite: 'reps',
+    description: "1 pompe/1 muscle-up/1 dip, 2/2/2, 3/3/3... jusqu'à l'échec. Score = dernier palier réussi.",
+  },
+]
+
+export const NIVEAU_INFO: { valeur: Niveau; nom: string; plage: string }[] = [
+  { valeur: 1, nom: 'Débutant', plage: '≤ 3 tractions' },
+  { valeur: 2, nom: 'Intermédiaire', plage: '4 à 10 tractions' },
+  { valeur: 3, nom: 'Avancé', plage: '11 tractions et plus' },
 ]

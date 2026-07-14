@@ -9,9 +9,9 @@ import { useRecoveryTimer } from '../lib/useRecoveryTimer'
 const programme = programmeData as Programme
 
 const ECHAUFFEMENT = [
-  '5 min cardio léger (corde à sauter, rameur ou footing)',
-  'Mobilité épaules/coudes/poignets : rotations + élastique (dislocations, pass-through)',
-  'Activation : dead hang 2×20-30 s, scapular pulls 2×8, tractions australiennes légères 2×8',
+  'Cardio : 5 à 7 min de corde à sauter (croisés, pieds joints, alterné, 1 jambe...)',
+  'Articulaire : 5 min de mobilité des poignets (flexion/extension à genoux)',
+  'Musculaire : 5 min d\'activation — tractions scapula, tractions australiennes, tractions isométriques, biceps/triceps/épaule élastique',
 ]
 
 function repCibleParDefaut(reps: string, maxActuel: number): number {

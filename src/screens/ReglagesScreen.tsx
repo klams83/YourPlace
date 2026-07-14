@@ -2,13 +2,8 @@ import { useRef, useState } from 'react'
 import { useAppState } from '../lib/AppStateContext'
 import { defaultState, exportStateJson, importStateJson } from '../lib/store'
 import type { Niveau } from '../lib/types'
+import { NIVEAU_INFO } from '../lib/types'
 import { Button, Card, PageTitle, Badge } from '../components/ui'
-
-const NIVEAUX: { valeur: Niveau; label: string }[] = [
-  { valeur: 1, label: 'Niveau 1 — 0 à 3 tractions' },
-  { valeur: 2, label: 'Niveau 2 — 4 à 8 tractions' },
-  { valeur: 3, label: 'Niveau 3 — 8 et plus' },
-]
 
 export function ReglagesScreen({ onRetest }: { onRetest: () => void }) {
   const { state, setState } = useAppState()
@@ -61,7 +56,7 @@ export function ReglagesScreen({ onRetest }: { onRetest: () => void }) {
         <p className="text-ink-muted text-sm mb-2">Profil actuel</p>
         {state.profil ? (
           <div className="flex items-center justify-between mb-3">
-            <Badge tone="amber">Niveau {state.profil.niveau}</Badge>
+            <Badge tone="amber">{NIVEAU_INFO[state.profil.niveau - 1].nom}</Badge>
             <span className="text-ink-muted text-xs font-mono">
               Test du {new Date(state.profil.dateTest).toLocaleDateString('fr-FR')}
             </span>
@@ -75,7 +70,7 @@ export function ReglagesScreen({ onRetest }: { onRetest: () => void }) {
       <Card className="mb-4">
         <p className="text-ink-muted text-sm mb-3">Changer de niveau manuellement</p>
         <div className="space-y-2">
-          {NIVEAUX.map((n) => (
+          {NIVEAU_INFO.map((n) => (
             <button
               key={n.valeur}
               onClick={() => changerNiveau(n.valeur)}
@@ -84,7 +79,7 @@ export function ReglagesScreen({ onRetest }: { onRetest: () => void }) {
               }`}
               disabled={!state.profil}
             >
-              {n.label}
+              {n.nom} — {n.plage}
             </button>
           ))}
         </div>

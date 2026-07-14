@@ -1,0 +1,91 @@
+{
+  "niveau1": {
+    "plage": "0-3 tractions",
+    "focus": "Construire la force de base : excentrique, isométrie, tirage horizontal",
+    "seances": [
+      {
+        "nom": "Séance 1 — Excentrique",
+        "exercices": [
+          { "nom": "Tractions négatives (descente 5 s)", "series": 5, "reps": "3-4", "recup": 120 },
+          { "nom": "Tractions australiennes pronation", "series": 4, "reps": "8-10", "recup": 90 },
+          { "nom": "Dead hang", "series": 3, "reps": "max (s)", "recup": 60 }
+        ]
+      },
+      {
+        "nom": "Séance 2 — Isométrie",
+        "exercices": [
+          { "nom": "Hold menton au-dessus de la barre", "series": 4, "reps": "max (s)", "recup": 120 },
+          { "nom": "Tractions australiennes supination", "series": 4, "reps": "8-10", "recup": 90 },
+          { "nom": "Scapular pulls", "series": 3, "reps": "8-10", "recup": 60 }
+        ]
+      },
+      {
+        "nom": "Séance 3 — Mixte",
+        "exercices": [
+          { "nom": "Tractions négatives lentes (7-10 s)", "series": 4, "reps": "2-3", "recup": 120 },
+          { "nom": "Tractions australiennes", "series": 4, "reps": "max", "recup": 90 },
+          { "nom": "Dead hang actif (omoplates engagées)", "series": 3, "reps": "20-30 s", "recup": 60 }
+        ]
+      }
+    ]
+  },
+  "niveau2": {
+    "plage": "4-8 tractions",
+    "focus": "Volume et technique sur tractions complètes",
+    "seances": [
+      {
+        "nom": "Séance 1 — Volume",
+        "exercices": [
+          { "nom": "Tractions pronation", "series": 5, "reps": "50-60% du max", "recup": 120 },
+          { "nom": "Négatives lentes", "series": 3, "reps": "3-4", "recup": 120 },
+          { "nom": "Tractions australiennes", "series": 3, "reps": "10-12", "recup": 90 }
+        ]
+      },
+      {
+        "nom": "Séance 2 — Technique",
+        "exercices": [
+          { "nom": "Tractions supination", "series": 4, "reps": "4-6", "recup": 120 },
+          { "nom": "Hold menton au-dessus de la barre", "series": 3, "reps": "max (s)", "recup": 90 },
+          { "nom": "Scapular pulls", "series": 3, "reps": "10", "recup": 60 }
+        ]
+      },
+      {
+        "nom": "Séance 3 — Intensité",
+        "exercices": [
+          { "nom": "Tractions one shot (max − 1 rep)", "series": 3, "reps": "max-1", "recup": 180 },
+          { "nom": "Négatives lestées ou très lentes", "series": 3, "reps": "3", "recup": 120 },
+          { "nom": "Australiennes lestées", "series": 3, "reps": "8-10", "recup": 90 }
+        ]
+      }
+    ]
+  },
+  "niveau3": {
+    "plage": "8+ tractions",
+    "focus": "Volume élevé, lest, variantes de prise",
+    "seances": [
+      {
+        "nom": "Séance 1 — Pyramide",
+        "exercices": [
+          { "nom": "Pyramide 1-2-3-4-5-4-3-2-1", "series": 1, "reps": "pyramide", "recup": 45 },
+          { "nom": "Tractions pronation", "series": 4, "reps": "60-70% du max", "recup": 120 }
+        ]
+      },
+      {
+        "nom": "Séance 2 — Force / Lest",
+        "exercices": [
+          { "nom": "Tractions lestées", "series": 5, "reps": "3-5", "recup": 180 },
+          { "nom": "Tractions supination prise serrée", "series": 3, "reps": "6-8", "recup": 120 },
+          { "nom": "Négatives lestées", "series": 3, "reps": "3", "recup": 120 }
+        ]
+      },
+      {
+        "nom": "Séance 3 — Variantes / Endurance",
+        "exercices": [
+          { "nom": "Tractions prise large", "series": 4, "reps": "6-8", "recup": 120 },
+          { "nom": "Tractions archer (par côté)", "series": 3, "reps": "3-5", "recup": 120 },
+          { "nom": "EMOM 10 min — 40-50% du max / minute", "series": 10, "reps": "40-50% du max", "recup": 0 }
+        ]
+      }
+    ]
+  }
+}

@@ -1,48 +1,62 @@
 @import 'tailwindcss';
 
 @theme {
-  --font-display: 'Oswald', 'Arial Narrow', sans-serif;
+  --font-display: 'Bebas Neue', 'Arial Narrow', sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
   --font-sans: 'Barlow Semi Condensed', system-ui, sans-serif;
 
-  /* Fiche militaire : papier clair, bleu gendarmerie, tampon rouge */
-  --color-paper: #f5f1e6;
-  --color-paper-dark: #ece6d4;
-  --color-ink: #1d2433;
-  --color-ink-soft: #4a5163;
-  --color-ink-muted: #7b8090;
-  --color-navy: #23366b;
-  --color-navy-soft: #3a4d85;
-  --color-stamp: #b33a2b;
-  --color-line: #cfc7ae;
+  /* Carnet militaire sombre */
+  --color-bg: #0d0f0d;
+  --color-panel: #15170f;
+  --color-panel-raised: #1b1e14;
+  --color-line: #33362a;
+  --color-line-soft: #22241a;
+  --color-ink: #e8e6d8;
+  --color-ink-soft: #b7b6a3;
+  --color-ink-muted: #7d7c6d;
+  --color-olive: #7a7a3f;
+  --color-olive-soft: #5c5c30;
+  --color-amber: #c9a227;
+  --color-amber-soft: #8f731f;
+  --color-danger: #b3402b;
+  --color-ok: #5c8a3a;
 
-  /* Séries du graphe (palette validée sur fond papier) */
-  --color-chart-tractions: #3f63c4;
-  --color-chart-pompes: #c2472e;
-  --color-chart-abdos: #4e8035;
+  /* Séries du graphe */
+  --color-chart-max: #c9a227;
+  --color-chart-volume: #7a7a3f;
 }
 
 body {
-  background-color: var(--color-paper);
+  background-color: var(--color-bg);
   color: var(--color-ink);
   font-family: var(--font-sans);
-  /* trame papier discrète */
+  -webkit-tap-highlight-color: transparent;
   background-image: repeating-linear-gradient(
     0deg,
     transparent,
     transparent 31px,
-    rgba(35, 54, 107, 0.045) 31px,
-    rgba(35, 54, 107, 0.045) 32px
+    rgba(122, 122, 63, 0.05) 31px,
+    rgba(122, 122, 63, 0.05) 32px
   );
 }
 
 .font-display {
   font-family: var(--font-display);
+  letter-spacing: 0.04em;
 }
 
-/* Tampon rouge du chiffre J4 */
-.stamp {
-  border: 3px double var(--color-stamp);
-  color: var(--color-stamp);
-  transform: rotate(-4deg);
-  box-shadow: inset 0 0 0 1px rgba(179, 58, 43, 0.25);
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+/* Bouton large, mains moites/magnésie : zones de touche généreuses */
+.btn-tap {
+  min-height: 3.25rem;
+  touch-action: manipulation;
+  user-select: none;
+}
+
+::selection {
+  background-color: var(--color-amber-soft);
+  color: var(--color-bg);
 }

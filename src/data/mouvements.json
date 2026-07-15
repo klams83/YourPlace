@@ -1,0 +1,72 @@
+[
+  {
+    "nom": "Pronation",
+    "definition": "Prise de barre paumes de mains tournées à l'opposé du visage. C'est la prise utilisée pour le test de niveau et la traction dite « classique ».",
+    "consignes": "En expirant, montez le menton au-dessus de la barre, jambes tendues et gainage compact. Descendez en contrôlant et en inspirant jusqu'à bras totalement tendus et omoplates relâchées."
+  },
+  {
+    "nom": "Supination",
+    "definition": "Prise de barre paumes de mains tournées vers le visage. Sollicite davantage les biceps ; c'est la prise du chin-up.",
+    "consignes": "Même exécution que la traction pronation : montée en expirant menton au-dessus de la barre, descente contrôlée en inspirant jusqu'à bras tendus."
+  },
+  {
+    "nom": "Traction clean form",
+    "definition": "La traction « technique parfaite » : amplitude complète, du relâchement total des omoplates jusqu'au menton au-dessus de la barre, en pronation ou en supination.",
+    "consignes": "Prenez la barre (pronation ou supination selon la variante), montez le menton au-dessus de la barre en expirant, descendez en contrôlant jusqu'à bras tendus et omoplates relâchées."
+  },
+  {
+    "nom": "Tractions isométriques",
+    "definition": "Traction avec un maintien de position statique, dans l'une de 3 situations : bras tendus sous la barre (dead hang), bras fléchis avec le front sous la barre, ou bras fléchis avec le menton au-dessus de la barre.",
+    "consignes": "Réalisez le mouvement comme une traction classique puis maintenez la position isométrique choisie pendant la durée cible, sans lâcher la barre."
+  },
+  {
+    "nom": "Traction scapula",
+    "definition": "Mouvement de base pour engager une traction : suspension bras tendus avec un rapprochement des omoplates, sans plier les bras.",
+    "consignes": "Suspendez-vous à la barre en relâchement complet, gardez les bras tendus, rapprochez les omoplates jusqu'à ce qu'elles se touchent puis amenez-les vers le sol."
+  },
+  {
+    "nom": "Tractions excentriques",
+    "definition": "Travail de la seule phase de descente de la traction, en partant menton au-dessus de la barre grâce à un support.",
+    "consignes": "Montez sur un support pour démarrer menton au-dessus de la barre, pieds dans le vide, puis contrôlez la descente pendant 5 secondes jusqu'à bras tendus."
+  },
+  {
+    "nom": "Traction chin-up",
+    "definition": "Traction en prise supination (paumes vers le visage). Même principe que la traction classique, seule la prise change.",
+    "consignes": "Prenez la barre en supination, montez le menton au-dessus de la barre en expirant, descendez en contrôlant jusqu'à bras tendus."
+  },
+  {
+    "nom": "Traction élastique (aide)",
+    "definition": "Traction assistée par un élastique enroulé autour de la barre, dans lequel on place les pieds. L'élastique aide à réaliser le mouvement sans le rendre facile.",
+    "consignes": "Enroulez l'élastique autour de la barre, insérez les deux pieds dedans, jambes tendues, gainage compact, puis exécutez la traction en technique complète."
+  },
+  {
+    "nom": "Traction élastique (résistance)",
+    "definition": "Traction rendue plus difficile par un élastique qui tire le corps vers le bas, fixé à la ceinture et lesté au sol.",
+    "consignes": "Fixez l'élastique autour du bassin, attachez l'autre extrémité à un poids au sol devant vous, puis développez la force nécessaire pour tracter menton au-dessus de la barre malgré la résistance."
+  },
+  {
+    "nom": "Tractions lestées",
+    "definition": "Traction rendue plus difficile qu'au poids de corps grâce à une charge additionnelle (gilet lesté, ceinture lestée, sac à dos chargé).",
+    "consignes": "Chargez-vous du poids additionnel choisi puis exécutez la traction en amplitude complète, sans sacrifier la technique pour soulever plus de charge."
+  },
+  {
+    "nom": "Dead hang",
+    "definition": "Suspension bras tendus sous la barre, en position de départ de traction, sans lâcher. Développe la force de préhension (le grip), fondamentale pour progresser aux tractions.",
+    "consignes": "Suspendez-vous bras tendus sous la barre et maintenez la position statique, sans balancer, jusqu'à la durée cible."
+  },
+  {
+    "nom": "Tractions australiennes",
+    "definition": "Exercice préalable à la traction verticale : le corps est à l'horizontale au lieu d'être vertical, sous une barre basse.",
+    "consignes": "Gainez le tronc pour garder le corps droit, tirez la barre vers vous pour rapprocher la poitrine, puis relâchez entièrement bras tendus et omoplates relâchées. Avancez les pieds sous la barre pour augmenter la difficulté."
+  },
+  {
+    "nom": "Toes to bar",
+    "definition": "Suspendu à la barre comme pour une traction, on amène les orteils jusqu'à la barre en contractant les abdominaux.",
+    "consignes": "Suspendu à la barre, contractez les abdominaux pour amener les orteils à la barre, jambes tendues si possible, en contrôlant la descente sans engager seulement le dos."
+  },
+  {
+    "nom": "Tractions hautes",
+    "definition": "Même déroulé qu'une traction clean form, mais l'objectif est de monter la poitrine au niveau de la barre — plus haut que la traction classique. Exercice de transition vers le muscle-up.",
+    "consignes": "Exécutez la traction avec davantage d'explosivité et de puissance pour amener la poitrine, et non seulement le menton, au niveau de la barre."
+  }
+]

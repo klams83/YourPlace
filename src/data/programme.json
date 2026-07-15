@@ -1,0 +1,107 @@
+{
+  "niveau1": {
+    "plage": "≤ 3 tractions au test",
+    "focus": "Construire les bases : négatives, isométrie, tirage assisté à l'élastique",
+    "seances": [
+      {
+        "nom": "Séance A",
+        "exercices": [
+          { "nom": "Tractions poids du corps", "series": 5, "reps": "2", "recup": 90 },
+          { "nom": "Tractions élastiques (aide)", "series": 4, "reps": "6", "recup": 90 },
+          { "nom": "Tractions excentriques (menton au-dessus de la barre au départ, retenir la descente 5 s)", "series": 4, "reps": "6", "recup": 105 },
+          { "nom": "Tractions scapula", "series": 4, "reps": "8", "recup": 75 }
+        ]
+      },
+      {
+        "nom": "Séance B",
+        "exercices": [
+          { "nom": "1 traction poids de corps + 4 tractions élastique (aide) petite résistance", "series": 4, "reps": "1 PDC + 4 assistées", "recup": 120 },
+          { "nom": "Tractions isométriques élastique (aide) résistance moyenne (montée explosive, maintien 3 s menton au-dessus, descente contrôlée)", "series": 5, "reps": "5", "recup": 120 },
+          { "nom": "Tractions supination élastique (aide) résistance moyenne", "series": 4, "reps": "6", "recup": 105 },
+          { "nom": "Tractions australiennes", "series": 4, "reps": "8", "recup": 75 }
+        ]
+      },
+      {
+        "nom": "Séance C",
+        "exercices": [
+          { "nom": "1 traction poids de corps + 6 tractions élastiques (aide) / 2 tractions poids de corps + 4 tractions élastiques (aide)", "series": 2, "reps": "combo assisté", "recup": 120 },
+          { "nom": "Tractions élastiques (aide) pronation (tirage explosif, descente contrôlée 3 s)", "series": 4, "reps": "5", "recup": 105 },
+          { "nom": "4 tractions élastiques (aide) + max tractions australiennes", "series": 3, "reps": "4 + max", "recup": 180 },
+          { "nom": "Dead hang", "series": 4, "reps": "15 s", "recup": 90 }
+        ]
+      }
+    ]
+  },
+  "niveau2": {
+    "plage": "4 à 10 tractions au test",
+    "focus": "Volume et technique complète : EMOM, pyramides, tempo, lest léger",
+    "seances": [
+      {
+        "nom": "Séance A",
+        "exercices": [
+          { "nom": "Tractions élastiques (résistance) x4 / tractions poids de corps x6", "series": 4, "reps": "4 assistées + 6 PDC", "recup": 90 },
+          { "nom": "Tractions poids de corps clean form", "series": 6, "reps": "6", "recup": 100 },
+          { "nom": "5 tractions / iso 3' menton au-dessus / 5 tractions / iso 3' front barre / 5 tractions / iso 3' bras tendus", "series": 2, "reps": "combo", "recup": 180 },
+          { "nom": "Dead hang 30 s / 4 tractions, +2 tractions à chaque tour jusqu'au max", "series": 1, "reps": "progressif jusqu'au max", "recup": 90 },
+          { "nom": "6 tractions clean form / 6 tractions élastique (aide) faible / max tractions élastique (aide) moyen", "series": 2, "reps": "combo", "recup": 120 }
+        ]
+      },
+      {
+        "nom": "Séance B",
+        "exercices": [
+          { "nom": "EMOM tractions lestées +5 kg — 5 tractions par minute", "series": 1, "reps": "8 minutes", "recup": 120 },
+          { "nom": "Tractions en pyramide 2/4/6/8/10/8/6/4/2", "series": 1, "reps": "pyramide", "recup": 0 },
+          { "nom": "Tractions isométriques (1 traction puis maintien 3' menton au-dessus de la barre)", "series": 5, "reps": "5", "recup": 120 },
+          { "nom": "Tractions tempo (montée explosive, descente contrôlée 3 s)", "series": 4, "reps": "6", "recup": 120 },
+          { "nom": "Toes to bar", "series": 4, "reps": "6", "recup": 90 }
+        ]
+      },
+      {
+        "nom": "Séance C",
+        "exercices": [
+          { "nom": "EMOM tractions clean form — 6 à 8 tractions par minute", "series": 1, "reps": "10 minutes", "recup": 0 },
+          { "nom": "Tractions hautes x4 / 6 tractions contrôlées clean form", "series": 1, "reps": "combo", "recup": 120 },
+          { "nom": "Tractions alternées (traction complète menton overbar puis demi-traction tête sous la barre)", "series": 4, "reps": "12", "recup": 90 },
+          { "nom": "Tractions élastiques (aide) moyen x5 / 10 tractions clean form", "series": 1, "reps": "combo", "recup": 90 },
+          { "nom": "Iso overbar 10' / 5 tractions clean form", "series": 1, "reps": "combo", "recup": 90 }
+        ]
+      }
+    ]
+  },
+  "niveau3": {
+    "plage": "11 tractions et plus au test",
+    "focus": "Force maximale et endurance : lest lourd, pyramides longues, variantes de prise",
+    "seances": [
+      {
+        "nom": "Séance A",
+        "exercices": [
+          { "nom": "Tractions clean form", "series": 8, "reps": "8", "recup": 30 },
+          { "nom": "Tractions lestées +10 kg x6 / +5 kg x8", "series": 3, "reps": "combo lesté", "recup": 180 },
+          { "nom": "Tractions hautes avec élastique (résistance)", "series": 4, "reps": "6", "recup": 75 },
+          { "nom": "Iso bras tendus 5' / 5 tractions / iso 6' / 6 tractions / iso 8' / 8 tractions", "series": 2, "reps": "combo", "recup": 120 },
+          { "nom": "Tractions australiennes (montée explosive, descente contrôlée)", "series": 4, "reps": "15", "recup": 90 }
+        ]
+      },
+      {
+        "nom": "Séance B",
+        "exercices": [
+          { "nom": "Tractions en pyramide 2/4/6/8/10/12/14/16/14/12/10/8/6/4/2 — le plus rapidement possible", "series": 1, "reps": "pyramide", "recup": 0 },
+          { "nom": "Tractions +10 kg x5 / max tractions one shot", "series": 2, "reps": "combo", "recup": 210 },
+          { "nom": "EMOM 5 pompes / 5 tractions", "series": 1, "reps": "10 minutes", "recup": 0 },
+          { "nom": "Chin-up", "series": 4, "reps": "15", "recup": 105 },
+          { "nom": "Dead hang", "series": 4, "reps": "30 s", "recup": 60 }
+        ]
+      },
+      {
+        "nom": "Séance C",
+        "exercices": [
+          { "nom": "Tractions +15/20 kg", "series": 5, "reps": "5", "recup": 150 },
+          { "nom": "Descente de gamme tractions 20/16/14/10/6/2", "series": 2, "reps": "descente de gamme", "recup": 180 },
+          { "nom": "8 tractions / iso 15' / 8 tractions", "series": 4, "reps": "combo", "recup": 150 },
+          { "nom": "Tractions excentriques +20 kg x4 / 8 tractions clean form / 8 tractions élastiques (aide)", "series": 1, "reps": "combo", "recup": 0 },
+          { "nom": "Traction scapula x1 / 1 traction clean form / iso 5' overbar", "series": 4, "reps": "combo", "recup": 90 }
+        ]
+      }
+    ]
+  }
+}
